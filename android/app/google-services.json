@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "57039815821",
+    "project_id": "hellomyfriendo-prod",
+    "storage_bucket": "hellomyfriendo-prod.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:57039815821:android:a87e4c66ab81ce0de74ec4",
+        "android_client_info": {
+          "package_name": "com.hellomyfriendo.hellomyfriendo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkBN_HlFcvS_gjqijh3M1UNZ6UddgXbtc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
