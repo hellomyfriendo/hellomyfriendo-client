@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:firebase_auth/firebase_auth.dart' as firebase_auth;
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:hellomyfriendo/cache/cache.dart';
+import 'package:logger/logger.dart';
 
 import '../../../users/users.dart';
 import '../../exception/exception.dart';
@@ -10,13 +11,16 @@ class AuthenticationRepository {
   /// {@macro authentication_repository}
   AuthenticationRepository({
     CacheClient? cache,
+    Logger? logger,
     firebase_auth.FirebaseAuth? firebaseAuth,
     GoogleSignIn? googleSignIn,
   })  : _cache = cache ?? CacheClient(),
+        _logger = logger ?? Logger(),
         _firebaseAuth = firebaseAuth ?? firebase_auth.FirebaseAuth.instance,
         _googleSignIn = googleSignIn ?? GoogleSignIn.standard();
 
   final CacheClient _cache;
+  final Logger _logger;
   final firebase_auth.FirebaseAuth _firebaseAuth;
   final GoogleSignIn _googleSignIn;
 
@@ -73,7 +77,8 @@ class AuthenticationRepository {
       await _firebaseAuth.signInWithCredential(credential);
     } on firebase_auth.FirebaseAuthException catch (e) {
       throw LogInWithGoogleException.fromCode(e.code);
-    } catch (_) {
+    } catch (e) {
+      _logger.e('Error logging in with Google', e);
       throw const LogInWithGoogleException();
     }
   }
