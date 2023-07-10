@@ -1,0 +1,18 @@
+{
+  "authenticationFailure": "Authentication failure",
+  "@authenticationFailure": {
+    "description": "Authentication failure message"
+  },
+  "googleSignIn": "Sign in with Google",
+  "@googleSignIn": {
+    "description": "Sign in with Google"
+  },
+  "homePageTitle": "Home",
+  "@homePageTitle": {
+    "description": "The Home Page title"
+  },
+  "loginPageTitle": "Login",
+  "@loginPageTitle": {
+    "description": "The Login Page title"
+  }
+}
